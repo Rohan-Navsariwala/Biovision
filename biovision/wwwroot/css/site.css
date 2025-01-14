@@ -1,0 +1,51 @@
+footer {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.animate1 {
+    animation:
+        typing 3s alternate infinite
+}
+
+@keyframes typing {
+	from {
+		width: 0
+	}
+
+	to {
+		width: 100%
+	}
+}
+
+.animate2 {
+    animation: typinglater 3s;
+    animation-delay: 3s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+
+@keyframes typinglater {
+    from{
+        visibility: visible;
+        width: 0;
+
+    }
+	to {
+        visibility: visible;
+		width: 100%;
+	}
+
+}
+
+
+

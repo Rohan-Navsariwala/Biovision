@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Edit Form | Admin";
+    Layout = "_LayoutAdmin";
+}
+@model biovision.Models.Products
+
+
+<div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <div class="w-full bg-white rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0 ">
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <h3 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+                Enter Product Details
+            </h3>
+            <form class="max-w-md mt-5 mx-auto" asp-controller="Admin" asp-action="UpdateList" enctype="multipart/form-data" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="relative z-0 w-full mb-5 group">
+                    <input asp-for="Name" type="text"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="Name"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Product Name</label>
+                </div>
+
+                <div class="relative z-0 w-full mb-5 group">
+                    <input asp-for="Brand" type="text"
+                           class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                           placeholder=" " required />
+                    <label for="Brand" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"> Brand Name </label>
+                </div>
+
+                <div class="relative z-0 w-full mb-5 group">
+                    <label for="Category" class="block mb-2 text-sm font-medium text-gray-900 ">Select an option</label>
+                    <select asp-for="Category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <option selected>Choose a Category</option>
+                        <option value="ECG Machine">ECG Machines</option>
+                        <option value="Defibrillator">Defibrillator</option>
+                        <option value="Patient Monitor">Patient Monitor</option>
+                        <option value="Syringe Pump">Syringe Pump</option>
+                        <option value="IBP/NIBP kit">NIBP/IBP kits</option>
+                        <option value="Misc">Miscellaneous</option>
+                        </select>
+
+                </div>
+
+
+                <div class="relative z-0 w-full mb-5 group">
+
+                    <label for="Description" class="block mb-2 text-sm font-medium text-gray-900">Product Description</label>
+                    <textarea asp-for="Description" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Write Brief info about product..." required></textarea>
+
+                </div>
+
+
+                <div class="relative z-0 w-full mb-5 group">
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900" for="image_input">Upload Image [.jpg .jpeg .png]</label>
+                    <input name="image_input"
+                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+                        aria-describedby="file_input_help" id="image_input" type="file" required>
+
+
+                </div>
+
+                <div class="relative z-0 w-full mb-5 group">
+
+                    <label class="block mb-2 text-sm font-medium text-gray-900" for="catalogue_input">Upload Catalogue [.pdf]</label>
+                    <input name="catalogue_input"
+                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+                        aria-describedby="file_input_help" id="catalogue_input" type="file" required>
+
+
+                </div>
+                <div>
+
+                <button type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+                    <a class="text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" asp-controller="Admin" asp-action="AdminDash">Cancel</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

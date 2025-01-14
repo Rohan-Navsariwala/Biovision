@@ -1,0 +1,98 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+}
+@model IEnumerable<biovision.Models.Products>
+
+<div class="mx-auto max-w-screen-xl flex items-center justify-center my-5">
+
+    <h1 class="text-2xl font-semibold text-gray-900 d-flex"> Products Edit Dashboard </h1>
+</div>
+<section class="bg-gray-50 p-3 sm:p-5">
+    <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+        <!-- Start coding here -->
+        <div class="bg-white relative shadow-md sm:rounded-lg overflow-hidden">
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+                <div class="w-full">
+                    <form class="flex items-center" asp-controller="Admin" asp-action="DisplayList" method="post">
+                        <button type="submit" class="flex items-center justify-center text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg text-sm px-4 py-2 mx-1" name="category" value="ECG Machine">
+                            ECG Machine
+                        </button>
+                        <button type="submit" class="flex items-center justify-center text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg text-sm px-4 py-2 mx-1" name="category" value="Defibrillator">
+                            Difibrillators
+                        </button>
+                        <button type="submit" class="flex items-center justify-center text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg text-sm px-4 py-2 mx-1" name="category" value="Patient Monitor">
+                            Patient Monitors
+                        </button>
+                        <button type="submit" class="flex items-center justify-center text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg text-sm px-4 py-2 mx-1" name="category" value="Syringe Pump">
+                            Syringe Pumps
+                        </button>
+                        <button type="submit" class="flex items-center justify-center text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg text-sm px-4 py-2 mx-1" name="category" value="IBP/NIBP kit">
+                            IBP/NIBP kits
+                        </button>
+                        <button type="submit" class="flex items-center justify-center text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg text-sm px-4 py-2 mx-1" name="category" value="Misc">
+                            Misc
+                        </button>
+
+                    </form>
+                </div>
+                <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+                    <form method="get" asp-controller="Admin" asp-action="AddProduct">
+                        <button type="submit" class="flex items-center justify-center text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-6 py-2" >
+                            Add product
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-500 ">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-4 py-3">Product name</th>
+                            <th scope="col" class="px-4 py-3">Category</th>
+                            <th scope="col" class="px-4 py-3">Brand</th>
+                            <th scope="col" class="px-4 py-3">Description</th>
+
+                            <th scope="col" class="px-4 py-3">
+                                <span class="sr-only">Actions</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <form method="post" acp-controller="Admin" asp-action="DeleteEntry">
+
+                    @if (Model != null) { 
+
+                        @foreach (var obj in Model) { 
+                        <tr class="border-b ">
+                            
+                            <th scope="row" class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap">
+                                <img src="@obj.Image_URL" alt="image_NA" class="w-auto h-8 mr-3">
+                                @obj.Name
+                            </th>
+                            <td class="px-4 py-3">@obj.Category</td>
+                            <td class="px-4 py-3">@obj.Brand</td>
+                            <td class="px-4 py-3">@obj.Description</td>
+                            <td class="px-4 py-3 flex justify-end"> 
+                                <button type="submit" class="flex items-center justify-center text-white bg-red-600 hover:bg-red-700 font-medium rounded-lg text-sm px-4 py-2" value="@obj.Id" name="Id"> Delete Product
+                                </button>
+                            </td>
+                        </tr> 
+                        }
+                    }
+                        </form>
+
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<div class="mx-auto max-w-screen-xl flex items-center justify-center my-5">
+    <a type="button" asp-controller="Admin" asp-action="Logout" class="flex items-center justify-center text-white bg-red-600 hover:bg-red-700 font-medium rounded-lg text-sm px-4 py-2" name="logout">
+        Logout
+    </a>
+</div>

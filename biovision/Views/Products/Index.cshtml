@@ -1,0 +1,144 @@
+﻿@{
+	ViewData["Title"] = "Products | Biovision Meditech";
+}
+
+@model IEnumerable<biovision.Models.Products>;
+
+<div class="mx-auto max-w-screen-xl flex items-center justify-around my-5">
+	<h1 class="text-2xl font-semibold text-gray-900 d-flex"> Our Product Category </h1>
+	<h1 class="text-2xl font-semibold text-gray-900 d-flex">
+		@(Model?.FirstOrDefault()?.Category ?? "No category available")
+	</h1>
+
+</div>
+
+<div class="flex justify-center">
+	<div class="flex space-x-16">
+
+		<!-- left catagory div -->
+		<form class="flex flex-col space-y-4" asp-controller="Products" asp-action="Index" method="post">
+
+			<div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl ">
+				<img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="./images/product1.png" alt="">
+				<div class="flex flex-col justify-between p-4 leading-normal w-full">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">ECG Machines</h5>
+					<p class="mb-3 font-normal text-gray-700 ">High-quality electrocardiogram machines for accurate readings.</p>
+					<button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 " name="category" value="ECG Machine">
+						Show Products
+						<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl ">
+				<img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="./images/product2.png" alt="">
+				<div class="flex flex-col justify-between p-4 leading-normal w-full">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Patient Monitors</h5>
+					<p class="mb-3 font-normal text-gray-700 ">Durable and accurate monitors for intensive care units.</p>
+					<button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 " name="category" value="Patient Monitor">
+						Show Products
+						<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl  ">
+				<img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="./images/product3.jpg" alt="">
+				<div class="flex flex-col justify-between p-4 leading-normal w-full">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Defibrillators</h5>
+					<p class="mb-3 font-normal text-gray-700 ">Life-saving devices for cardiac emergencies.</p>
+					<button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800" name="category" value="Defibrillator">
+						Show Products
+						<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl  ">
+				<img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="./images/product4.jpg" alt="">
+				<div class="flex flex-col justify-between p-4 leading-normal w-full">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">IBP/NIBP Kits</h5>
+					<p class="mb-3 font-normal text-gray-700 ">High-quality IBP/NIBP kits to measure accurate blood pressure.</p>
+					<button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 " name="category" value="IBP/NIBP kit">
+						Show Products
+						<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl ">
+				<img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="./images/product5.jpg" alt="">
+				<div class="flex flex-col justify-between p-4 leading-normal w-full">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Syringe Pumps</h5>
+					<p class="mb-3 font-normal text-gray-700">Durable syringe pumps with adequate medicine delivery.</p>
+					<button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 " name="category" value="Syringe Pump">
+						Show Products
+						<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl ">
+				<img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="./images/product6.jpg" alt="">
+				<div class="flex flex-col justify-between p-4 leading-normal w-full">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Miscellaneous</h5>
+					<p class="mb-3 font-normal text-gray-700 ">Best in class pulse oximeters, aed kits, ecg cables, nebuizer and other attachments as well.</p>
+					<button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 " name="category" value="Misc">
+						Show Products
+						<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+						</svg>
+					</button>
+				</div>
+			</div>
+
+		</form>
+
+		<!-- right list div -->
+		<div class="enlisted-products">
+
+			@if(Model != null){
+
+				@foreach (var obj in Model) { 
+				
+
+			<div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl mb-4" style="min-width: 38vw">
+				<img class="object-cover w-full rounded-t-lg h-96 md:min-h-36 md:max-h-40 md:max-w-48 md:rounded-none md:rounded-s-lg" src="@obj.Image_URL" alt="image not loaded">
+				<div class="flex flex-col justify-between p-4 leading-normal w-full">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">@obj.Name</h5>
+					<p class="mb-3 font-normal text-gray-700 ">@obj.Description</p>
+					<div class="flex flex-row justify-between">
+						<div class="flex justify-start">
+						<span class="flex inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg mr-1">
+							@obj.Brand
+						</span>
+						<span class="flex inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg">
+							@obj.Category
+						</span>
+						</div>
+						<span class="flex inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800">
+						<a href="@obj.Catalogue_URL" target="_blank">Catalogue</a>
+						</span>
+					</div>
+				</div>
+			</div>
+
+				}
+			}
+
+
+		</div>
+
+	</div>
+</div>
+<br>

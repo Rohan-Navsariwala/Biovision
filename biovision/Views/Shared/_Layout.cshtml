@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - biovision</title>
+
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/biovision.styles.css" asp-append-version="true" />
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+	<!--for fonts mainly used in footer-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<header>
+
+		<nav class="bg-white w-full z-20 top-0 start-0 border-b border-gray-200 ">
+
+			<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+
+				<a href="http://biovisionmeditech.com" class="flex items-center space-x-3 rtl:space-x-reverse">
+					<img src="./images/logo.png" class="h-10" alt="BM Logo" />
+				</a>
+
+				<div class="flex md:order-2 invisible">
+					<button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 me-1">
+						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+						</svg>
+						<span class="sr-only">Search</span>
+					</button>
+					<div class="relative hidden md:block">
+						<div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+							<svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+							</svg>
+							<span class="sr-only">Search icon</span>
+						</div>
+						<input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search...">
+					</div>
+					<button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-search" aria-expanded="false">
+						<span class="sr-only">Open main menu</span>
+						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+						</svg>
+					</button>
+				</div>
+
+				<div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+
+					<div class="relative mt-3 md:hidden">
+						<div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+							<svg class="w-4 h-4 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+							</svg>
+						</div>
+						<input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search...">
+					</div>
+
+					<!-- the nav list goes here -->
+					<ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+						<li>
+							<a asp-controller="Home" asp-action="Index" class="goto block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 cursor-pointer">Home</a>
+						</li>
+
+						<li>
+							<a asp-controller="About" asp-action="Index" class="goto block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 cursor-pointer">About Us</a>
+						</li>
+
+						<li>
+							<form method="get" asp-controller="Products" asp-action="Index">
+							<button type="submit" name="category" value="ECG Machine" class="goto block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 cursor-pointer">Products</button>
+							</form>
+						</li>
+
+						<li>
+							<a asp-controller="" asp-action="" class="goto block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 cursor-pointer">Services</a>
+						</li>
+
+						<li>
+							<button onclick="scrollToBottomSmoothly()" class="goto block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 cursor-pointer">Contact Us</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+	</header>
+
+	<div style="max-width: inherit">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
+
+	<footer class="bg-white">
+		<div class="mx-auto w-full max-w-screen-xl">
+			<div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+
+
+				<div class="mb-6 md:mb-0">
+					<button onclick="scrollToTop()" class="flex items-center">
+						<img src="./images/logo.png" class="h-16 me-3" alt="BM Logo" />
+					</button>
+					<br>
+					<p class="text-gray-500 font-medium">
+						We distribute medical equipment in South
+						Gujarat, including ICU monitors, defibrillators, ECG machines, and more, with 20+ years of
+						expertise in cardiology and anesthesia services.
+					</p>
+				</div>
+
+				<div>
+					<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Contact Us</h2>
+					<ul class="text-gray-500 font-medium">
+						<li class="mb-4">
+							<a href="tel:8238567589" class="hover:underline">+918238567589</a>
+						</li>
+						<li class="mb-4">
+							<a href="mailto:rohanknavsariwala@gmail.com"
+							   class="hover:underline">rohanknavsariwala@gmail.com</a>
+						</li>
+						<li class="mb-4">
+							<a href="#" class="hover:underline">Linkedin</a>
+						</li>
+						<li class="mb-4">
+							<a href="http://wa.me/+918238567589" class="hover:underline">Whatsapp</a>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Address</h2>
+					<ul class="text-gray-500 font-medium">
+						<li class="mb-4">
+							<a href="Platinum Plaza, Surat - Dumas Rd, Ambika Niketan, Athwa, Surat PIN-395007, Gujarat, India."
+							   class=" hover:underline">
+								Biovision Meditech <br> 101, 1st Floor, Sakar, <br> Opp.
+								Meghratna Complex, <br> Athugar Street, Nanpura, <br> Surat - 395001.
+							</a>
+						</li>
+
+					</ul>
+					<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Get in touch</h2>
+					<div data-element="fields" data-stacked="false"
+						 class="flex items-center w-full max-w-md mb-3 seva-fields formkit-fields">
+						<div class="relative w-full mr-3 formkit-field">
+							<label for="member_email"
+								   class="hidden block mb-2 text-sm font-medium text-gray-900 ">
+								Email
+								address
+							</label>
+							<div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+								<svg class="w-3.5 h-3.5 text-gray-500 " aria-hidden="true"
+									 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+									<path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z">
+									</path>
+									<path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z">
+									</path>
+								</svg>
+							</div>
+							<input id="member_email"
+								   class="formkit-input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
+								   name="email_address" aria-label="Email Address" placeholder="Your email address..."
+								   required="" type="email">
+						</div>
+						<button data-element="submit" class="formkit-submit">
+							<div class="formkit-spinner">
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+							<span class="px-5 py-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg cursor-pointer hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">Email</span>
+						</button>
+					</div>
+				</div>
+				<div>
+					<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Location</h2>
+					<div>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3720.078239276526!2d72.81095037526097!3d21.18905068050074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDExJzIwLjYiTiA3MsKwNDgnNDguNyJF!5e0!3m2!1sen!2sin!4v1718598681133!5m2!1sen!2sin"
+								width="250" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+								referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+			</div>
+
+			<hr class="my-4 border-gray-200 sm:mx-auto" />
+			<span class="block text-sm text-gray-500 sm:text-center mb-4">
+				© 2024 <a href="url goes here" class="hover:underline">Biovision MEditech</a>. All Rights Reserved.
+			</span>
+
+		</div>
+	</footer>
+
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
